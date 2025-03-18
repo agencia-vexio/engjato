@@ -36,15 +36,15 @@ export default function Home() {
   // Client logos
   const clientLogos = [
     "/clientes/aguaBonita.png",
-    "/clientes/Alcoeste.webp",
-    "/clientes/Alltech.webp",
+    "/clientes/alcoeste.png",
+    "/clientes/allteckLogo.png",
     "/clientes/enersugar.png",
     "/clientes/granelli.png",
     "/clientes/oleoplan.png",
     "/clientes/olfar.png",
     "/clientes/selecta.png",
-    "/clientes/tereos.avif",
-    "/clientes/uisa.wepb",
+    "/clientes/tereos.png",
+    "/clientes/uisa.png",
   ];
 
   // Auto-advance hero slider
@@ -299,8 +299,8 @@ export default function Home() {
                   <Image
                     src={logo || "/placeholder.svg"}
                     alt={`Client logo ${index + 1}`}
-                    width={150} // Ajuste a largura
-                    height={75} // Ajuste a altura
+                    width={200} // Ajuste a largura
+                    height={125} // Ajuste a altura
                     className="h-16 object-contain"
                   />
                 </div>
