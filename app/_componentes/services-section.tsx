@@ -49,15 +49,15 @@ const ServiceCard = ({
       initial="hidden"
       animate="visible"
       transition={{ delay }}
-      className="relative flex flex-col h-full p-6 overflow-hidden rounded-xl bg-black/80 border border-red-600/50"
+      className="relative flex flex-col h-full p-6 overflow-hidden rounded-xl bg-black/80 border border-yellow-400"
     >
-      <div className="absolute top-4 left-4 flex items-center justify-center w-8 h-8 rounded-full bg-red-600 text-white font-bold">
+      <div className="absolute top-4 left-4 flex items-center justify-center w-8 h-8 rounded-full bg-y-400 text-white font-bold">
         {number}
       </div>
       <h3 className="mt-8 mb-3 text-xl font-bold text-white">{title}</h3>
-      <p className="text-gray-300">{description}</p>
+      <p className="text-gray-100">{description}</p>
       <motion.div
-        className="absolute -bottom-6 -right-6 w-24 h-24 rounded-full bg-gradient-to-br from-red-600/30 to-orange-500/10"
+        className="absolute -bottom-6 -right-6 w-24 h-24 rounded-full bg-gradient-to-br from-yellow-400/70 to-yellow-500/35"
         animate={{
           scale: [1, 1.1, 1],
         }}
@@ -119,7 +119,7 @@ export default function ServicesSection() {
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-yellow-900/90 via-yellow-800/80 to-yellow-900/90" />
+        <div className="absolute inset-0 bg-gradient-to-r from-yellow-900/30 via-yellow-400/60 to-yellow-900/20" />
       </div>
 
       <motion.div

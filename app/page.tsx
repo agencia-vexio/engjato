@@ -10,6 +10,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
 import ServicesSection from "./_componentes/services-section";
+import ServicePortfolio from "./_componentes/PortfolioSection ";
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,11 +20,9 @@ export default function Home() {
 
   // Refs for sections to check if they're in view
   const whoWeAreRef = useRef(null);
-  //const portfolioRef = useRef(null);
   const contactRef = useRef(null);
 
   const whoWeAreInView = useInView(whoWeAreRef, { once: true, amount: 0.3 });
-  //const portfolioInView = useInView(portfolioRef, { once: true, amount: 0.3 });
   const contactInView = useInView(contactRef, { once: true, amount: 0.3 });
 
   // Hero slider images
@@ -36,51 +35,17 @@ export default function Home() {
 
   // Client logos
   const clientLogos = [
-    "/placeholder.svg?height=100&width=200",
-    "/placeholder.svg?height=100&width=200",
-    "/placeholder.svg?height=100&width=200",
-    "/placeholder.svg?height=100&width=200",
-    "/placeholder.svg?height=100&width=200",
-    "/placeholder.svg?height=100&width=200",
-    "/placeholder.svg?height=100&width=200",
-    "/placeholder.svg?height=100&width=200",
+    "/clientes/aguaBonita.png",
+    "/clientes/Alcoeste.webp",
+    "/clientes/Alltech.webp",
+    "/clientes/enersugar.png",
+    "/clientes/granelli.png",
+    "/clientes/oleoplan.png",
+    "/clientes/olfar.png",
+    "/clientes/selecta.png",
+    "/clientes/tereos.avif",
+    "/clientes/uisa.wepb",
   ];
-
-  {
-    /* Header 
-  const portfolioItems = [
-    {
-      title: "Industrial Equipment Restoration",
-      description: "Complete sandblasting and refinishing of heavy machinery",
-      image: "/placeholder.svg?height=400&width=600",
-    },
-    {
-      title: "Structural Steel Preparation",
-      description: "Surface preparation for large-scale construction projects",
-      image: "/placeholder.svg?height=400&width=600",
-    },
-    {
-      title: "Automotive Restoration",
-      description: "Precision sandblasting for vintage vehicle restoration",
-      image: "/placeholder.svg?height=400&width=600",
-    },
-    {
-      title: "Marine Equipment Maintenance",
-      description: "Corrosion removal and prevention for maritime applications",
-      image: "/placeholder.svg?height=400&width=600",
-    },
-    {
-      title: "Architectural Metal Cleaning",
-      description: "Restoration of architectural metal elements and fixtures",
-      image: "/placeholder.svg?height=400&width=600",
-    },
-    {
-      title: "Custom Surface Finishing",
-      description: "Specialized texture and finish applications",
-      image: "/placeholder.svg?height=400&width=600",
-    },
-  ];*/
-  }
 
   // Auto-advance hero slider
   useEffect(() => {
@@ -189,7 +154,7 @@ export default function Home() {
                 className="object-cover"
                 priority={index === 0}
               />
-              <div className="absolute inset-0 bg-black/50" />
+              <div className="absolute inset-0 bg-gradient-to-r from-black/45 to-yellow-900/90" />
             </div>
           ))}
         </div>
@@ -345,214 +310,188 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Portfolio Section 
-      <section id="portfolio" className="py-20" ref={portfolioRef}>
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={portfolioInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8 }}
-            className="max-w-4xl mx-auto text-center mb-16"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Our Portfolio
-            </h2>
-            <div className="w-20 h-1 bg-primary mx-auto mb-8"></div>
-            <p className="text-lg text-gray-700">
-              Explore our recent projects and see the quality of our work across
-              different industries and applications.
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={portfolioInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
-          >
-            {portfolioItems.map((item, index) => (
-              <motion.div
-                key={item.title}
-                initial={{ opacity: 0, y: 30 }}
-                animate={portfolioInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.5, delay: 0.1 * index }}
-                className="group relative overflow-hidden rounded-lg shadow-md"
-              >
-                <Image
-                  src={item.image || "/placeholder.svg"}
-                  alt={item.title}
-                  width={600}
-                  height={400}
-                  className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                  <h3 className="text-white text-xl font-bold mb-2">
-                    {item.title}
-                  </h3>
-                  <p className="text-white/90 mb-4">{item.description}</p>
-                  <Button
-                    variant="outline"
-                    className="text-white border-white hover:bg-white/20 w-fit"
-                  >
-                    View Project
-                  </Button>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-
-          <div className="text-center mt-12">
-            <Button size="lg">
-              View All Projects <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
-          </div>
-        </div>
+      {/* Portfolio Section */}
+      <section id="portfolio">
+        <ServicePortfolio />
       </section>
 
-      {/* Call to Action */}
-      <section className="py-20 bg-primary text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Ready to Transform Your Surfaces?
-          </h2>
-          <p className="text-xl mb-8 max-w-3xl mx-auto">
-            Contact us today to discuss your project requirements and get a free
-            consultation with our experts.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              size="lg"
-              variant="outline"
-              className="text-white border-white hover:bg-white/20"
-            >
-              Get a Free Quote
-            </Button>
-            <Button
-              size="lg"
-              className="bg-white text-primary hover:bg-white/90"
-            >
-              Contact Us Now
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Section */}
+      {/* sessao contato */}
       <section id="contact" className="py-20" ref={contactRef}>
-        <div className="container mx-auto px-4">
+        <div className="container bg-black mx-auto px-4">
+          {/* Seção de título */}
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={contactInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
             className="max-w-4xl mx-auto text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Contact Us</h2>
-            <div className="w-20 h-1 bg-primary mx-auto mb-8"></div>
-            <p className="text-lg text-gray-700">
-              Have questions or ready to start your project? Reach out to our
-              team for expert assistance.
-            </p>
+            <div className="">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
+                Contato
+              </h2>
+              <div className="w-20 h-1 bg-yellow-400 mx-auto mb-8"></div>
+              <p className="text-lg text-gray-200">
+                Está pronto para começar seu projeto? Entre em contato com nossa
+                equipe para assistência especializada.
+              </p>
+            </div>
           </motion.div>
 
+          {/* Grid de conteúdo */}
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={contactInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="grid md:grid-cols-2 gap-12"
+            className="grid md:grid-cols-2 gap-12 ml-24 mr-24"
           >
-            <div>
-              <h3 className="text-2xl font-bold mb-6">Get In Touch</h3>
+            {/* Coluna de informações de contato */}
+            <div className="bg-white p-8 mb-11 rounded-lg shadow-lg">
+              <h3 className="text-2xl font-bold mb-6 text-black">Contato</h3>
               <p className="text-gray-600 mb-8">
-                Our team is ready to answer your questions and provide the
-                information you need to make informed decisions about your
-                project.
+                Nossa equipe está pronta para responder às suas perguntas e
+                fornecer informações de que necessita para tomar decisões
+                informadas sobre o seu projeto.
               </p>
 
               <div className="space-y-6">
+                {/* Telefone */}
                 <div className="flex items-start">
-                  <Phone className="w-5 h-5 text-primary mt-1 mr-4" />
+                  <Phone className="w-5 h-5 text-yellow-400 mt-1 mr-4" />
                   <div>
-                    <h4 className="font-bold">Phone</h4>
-                    <p className="text-gray-600">(555) 123-4567</p>
+                    <h4 className="font-bold text-black">Telefone</h4>
+                    <p className="text-gray-600">(18) 3329-1918</p>
                   </div>
                 </div>
 
+                {/* Email */}
                 <div className="flex items-start">
-                  <Mail className="w-5 h-5 text-primary mt-1 mr-4" />
+                  <Mail className="w-5 h-5 text-yellow-400 mt-1 mr-4" />
                   <div>
-                    <h4 className="font-bold">Email</h4>
-                    <p className="text-gray-600">info@sandblastpro.com</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start">
-                  <MapPin className="w-5 h-5 text-primary mt-1 mr-4" />
-                  <div>
-                    <h4 className="font-bold">Address</h4>
+                    <h4 className="font-bold text-black">Email</h4>
                     <p className="text-gray-600">
-                      123 Industrial Parkway
+                      SOCIETARIO@SECULO20ASSIS.COM.BR
+                    </p>
+                  </div>
+                </div>
+
+                {/* Endereço */}
+                <div className="flex items-start">
+                  <MapPin className="w-5 h-5 text-yellow-400 mt-1 mr-4" />
+                  <div>
+                    <h4 className="font-bold text-black">Endereço</h4>
+                    <p className="text-gray-600">
+                      Av. Tarumã, 236
                       <br />
-                      Anytown, ST 12345
+                      Centro
                       <br />
-                      United States
+                      Taruma-Sp
                     </p>
                   </div>
                 </div>
               </div>
 
+              {/* Horário comercial */}
               <div className="mt-8">
-                <h4 className="font-bold mb-4">Business Hours</h4>
+                <h4 className="font-bold mb-4 text-black">Horário comercial</h4>
                 <p className="text-gray-600">
-                  Monday - Friday: 8:00 AM - 5:00 PM
+                  Segunda a Sexta: 07:00 - 17:00
                   <br />
-                  Saturday: 9:00 AM - 2:00 PM
+                  Sábado: Fechado
                   <br />
-                  Sunday: Closed
+                  Domingo: Fechado
                 </p>
               </div>
             </div>
 
-            <div>
-              <h3 className="text-2xl font-bold mb-6">Send Us a Message</h3>
+            {/* Coluna do formulário */}
+            <div className="bg-white mb-11 p-8 rounded-lg shadow-lg">
+              <h3 className="text-2xl font-bold mb-6 text-black">
+                Envie-nos uma mensagem
+              </h3>
               <form className="space-y-6">
+                {/* Nome e Email */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="space-y-2">
-                    <label htmlFor="name" className="text-sm font-medium">
-                      Name
+                    <label
+                      htmlFor="name"
+                      className="text-sm font-medium text-gray-700"
+                    >
+                      Nome
                     </label>
-                    <Input id="name" placeholder="Your name" />
+                    <Input
+                      id="name"
+                      placeholder="Seu nome"
+                      className="w-full"
+                    />
                   </div>
                   <div className="space-y-2">
-                    <label htmlFor="email" className="text-sm font-medium">
+                    <label
+                      htmlFor="email"
+                      className="text-sm font-medium text-gray-700"
+                    >
                       Email
                     </label>
-                    <Input id="email" type="email" placeholder="Your email" />
+                    <Input
+                      id="email"
+                      type="email"
+                      placeholder="Seu email"
+                      className="w-full"
+                    />
                   </div>
                 </div>
 
+                {/* Celular */}
                 <div className="space-y-2">
-                  <label htmlFor="phone" className="text-sm font-medium">
-                    Phone
+                  <label
+                    htmlFor="phone"
+                    className="text-sm font-medium text-gray-700"
+                  >
+                    Celular
                   </label>
-                  <Input id="phone" placeholder="Your phone number" />
+                  <Input
+                    id="phone"
+                    placeholder="Seu número de celular"
+                    className="w-full"
+                  />
                 </div>
 
+                {/* Assunto */}
                 <div className="space-y-2">
-                  <label htmlFor="subject" className="text-sm font-medium">
-                    Subject
+                  <label
+                    htmlFor="subject"
+                    className="text-sm font-medium text-gray-700"
+                  >
+                    Assunto
                   </label>
-                  <Input id="subject" placeholder="Message subject" />
+                  <Input
+                    id="subject"
+                    placeholder="Assunto da mensagem"
+                    className="w-full"
+                  />
                 </div>
 
+                {/* Mensagem */}
                 <div className="space-y-2">
-                  <label htmlFor="message" className="text-sm font-medium">
-                    Message
+                  <label
+                    htmlFor="message"
+                    className="text-sm font-medium text-gray-700"
+                  >
+                    Mensagem
                   </label>
-                  <Textarea id="message" placeholder="Your message" rows={5} />
+                  <Textarea
+                    id="message"
+                    placeholder="Sua mensagem"
+                    rows={5}
+                    className="w-full"
+                  />
                 </div>
 
-                <Button type="submit" className="w-full">
-                  Send Message
+                {/* Botão de enviar */}
+                <Button
+                  type="submit"
+                  className="w-full bg-yellow-400 hover:bg-yellow-500 text-black"
+                >
+                  Enviar mensagem
                 </Button>
               </form>
             </div>
@@ -720,7 +659,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 10 }}
             onClick={scrollToTop}
-            className="fixed bottom-6 right-6 p-3 rounded-full bg-primary text-white shadow-lg z-50 hover:bg-primary/90 transition-colors"
+            className="fixed bottom-6 right-6 p-3 rounded-full bg-yellow-400 text-white shadow-lg z-50 hover:bg-primary/90 transition-colors"
             aria-label="Scroll to top"
           >
             <ChevronUp className="h-6 w-6" />
