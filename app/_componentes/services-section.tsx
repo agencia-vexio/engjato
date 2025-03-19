@@ -5,23 +5,23 @@ import Image from "next/image";
 import { motion, useInView, useAnimation } from "framer-motion";
 import Link from "next/link";
 
-// Define animation variants
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.2,
-      delayChildren: 0.3,
+      staggerChildren: 0.1,
+      delayChildren: 0.2,
     },
   },
 };
 
 const itemVariants = {
-  hidden: { y: 50, opacity: 0 },
+  hidden: { y: 50, opacity: 0, scale: 0.95 },
   visible: {
     y: 0,
     opacity: 1,
+    scale: 1,
     transition: {
       type: "spring",
       stiffness: 100,
@@ -37,12 +37,7 @@ interface ServiceCardProps {
   delay?: number;
 }
 
-const ServiceCard = ({
-  number,
-  title,
-  description,
-  delay = 0,
-}: ServiceCardProps) => {
+const ServiceCard = ({ number, title, description, delay = 0 }: ServiceCardProps) => {
   return (
     <motion.div
       variants={itemVariants}
@@ -51,7 +46,7 @@ const ServiceCard = ({
       transition={{ delay }}
       className="relative flex flex-col h-full p-6 overflow-hidden rounded-xl bg-black/80 border border-yellow-400"
     >
-      <div className="absolute top-4 left-4 flex items-center justify-center w-8 h-8 rounded-full bg-y-400 text-white font-bold">
+      <div className="absolute top-4 left-4 flex items-center justify-center w-8 h-8 rounded-full bg-yellow-400 text-white font-bold">
         {number}
       </div>
       <h3 className="mt-8 mb-3 text-xl font-bold text-white">{title}</h3>
@@ -73,7 +68,7 @@ const ServiceCard = ({
 
 export default function ServicesSection() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, amount: 0.2 });
+  const isInView = useInView(ref, { once: true, amount: 0.1 });
   const controls = useAnimation();
 
   useEffect(() => {
@@ -85,7 +80,7 @@ export default function ServicesSection() {
   const services = [
     {
       number: "1",
-      title: "Jateamento ",
+      title: "Jateamento",
       description:
         "Serviços profissionais de jateamento de areia para preparação de superfícies e restauração de metal, concreto e outros materiais.",
     },
@@ -110,8 +105,12 @@ export default function ServicesSection() {
 
   return (
     <section className="relative w-full py-20 overflow-hidden">
-      {/* Background image with overlay */}
-      <div className="absolute inset-0 z-0">
+      <motion.div
+        className="absolute inset-0 z-0"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 0.5 }}
+      >
         <Image
           src="/imgJato.jpg"
           alt="jateamento industrial"
@@ -120,7 +119,7 @@ export default function ServicesSection() {
           priority
         />
         <div className="absolute inset-0 bg-gradient-to-r from-yellow-900/30 via-yellow-400/60 to-yellow-900/20" />
-      </div>
+      </motion.div>
 
       <motion.div
         ref={ref}
@@ -129,7 +128,7 @@ export default function ServicesSection() {
         animate={controls}
         className="relative z-10 container mx-auto px-4"
       >
-        <div className="mx-auto max-w-7xl ml-24 mr-24 md:ml-24 md:mr-24 sm:ml-6 sm:mr-6 xs:ml-4 xs:mr-4">
+        <div className="mx-auto max-w-7xl ml-24 mr-24 md:ml-24 md:mr-24 sm:ml-4 sm:mr-4 xs:ml-4 xs:mr-4">
           <motion.div className="text-center mb-16">
             <motion.h2
               className="text-3xl md:text-4xl font-bold text-white mb-4"
@@ -166,7 +165,7 @@ export default function ServicesSection() {
             className="mt-12 text-center"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1, duration: 0.5 }}
+            transition={{ delay: 1.2, duration: 0.5 }}
           >
             <motion.button
               className="px-8 py-3 bg-gradient-to-r from-yellow-600 to-yellow-500 text-white font-medium rounded-full hover:from-yellow-700 hover:to-yellow-600 transition-all duration-300 shadow-lg hover:shadow-yellow-500/20"
@@ -179,25 +178,26 @@ export default function ServicesSection() {
         </div>
       </motion.div>
 
-      {/* Animated floating elements */}
       <div className="absolute inset-0 pointer-events-none">
         {[...Array(6)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-12 h-12 rounded-full bg-yellow-500/10"
+            className="absolute w-14 h-12 rounded-full bg-yellow-500/10"
             initial={{
               x: Math.random() * 100 - 50 + "%",
               y: Math.random() * 100 + "%",
               scale: Math.random() * 0.5 + 0.5,
             }}
             animate={{
-              y: [0, -20, 0],
-              x: [0, Math.random() * 40 - 20, 0],
+              y: [0, -50, 0],
+              x: [0, Math.random() * 80 - 40, 0],
+              rotate: [0, Math.random() * 360],
             }}
             transition={{
-              duration: Math.random() * 5 + 10,
+              duration: Math.random() * 10 + 15,
               repeat: Number.POSITIVE_INFINITY,
               repeatType: "reverse",
+              ease: "easeInOut",
             }}
           />
         ))}

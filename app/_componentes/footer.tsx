@@ -36,31 +36,31 @@ export default function Footer() {
                   <li>
                     <Link
                       href="#"
-                      className="text-gray-400 hover:text-yellow-400 transition-colors"
+                      className="text-gray-400 ml-2 hover:text-yellow-400 transition-colors"
                     >
                       Inicio
                     </Link>
                     <Link
                       href="#about"
-                      className="text-gray-400 hover:text-yellow-400 transition-colors"
+                      className="text-gray-400 ml-2 hover:text-yellow-400 transition-colors"
                     >
                       Sobre
                     </Link>
                     <Link
                       href="#services"
-                      className="text-gray-400 hover:text-yellow-400 transition-colors"
+                      className="text-gray-400 ml-2 hover:text-yellow-400 transition-colors"
                     >
                       Serviços
                     </Link>
                     <Link
                       href="#portfolio"
-                      className="text-gray-400 hover:text-yellow-400 transition-colors"
+                      className="text-gray-400 ml-2 hover:text-yellow-400 transition-colors"
                     >
                       Portfolio
                     </Link>
                     <Link
                       href="#contact"
-                      className="text-gray-400 hover:text-yellow-400 transition-colors"
+                      className="text-gray-400 ml-2 hover:text-yellow-400 transition-colors"
                     >
                       Contato
                     </Link>

@@ -317,14 +317,14 @@ export default function Home() {
       </section>
 
       {/* sessao contato */}
-      <section id="contact" className="" ref={contactRef}>
+      <section id="contact" ref={contactRef}>
         <div className="container bg-black mx-auto px-4">
           {/* Seção de título */}
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={contactInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
-            className="max-w-4xl mx-auto text-center mb-16"
+            className="max-w-4xl mx-auto text-center mb-8 md:mb-16"
           >
             <div className="">
               <h2 className="text-3xl md:text-4xl font-bold pt-6 mb-2 text-white">
@@ -343,12 +343,14 @@ export default function Home() {
             initial={{ opacity: 0, y: 50 }}
             animate={contactInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="grid md:grid-cols-2 gap-12 ml-24 mr-24"
+            className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mx-4 md:mx-24"
           >
             {/* Coluna de informações de contato */}
-            <div className="bg-white p-8 mb-11 rounded-lg shadow-lg">
-              <h3 className="text-2xl font-bold mb-6 text-black">Contato</h3>
-              <p className="text-gray-600 mb-8">
+            <div className="bg-white p-6 md:p-8 mb-8 md:mb-11 rounded-lg shadow-lg">
+              <h3 className="text-2xl font-bold mb-6 text-black text-center md:text-left">
+                Contato
+              </h3>
+              <p className="text-gray-600 mb-8 text-center md:text-left">
                 Nossa equipe está pronta para responder às suas perguntas e
                 fornecer informações de que necessita para tomar decisões
                 informadas sobre o seu projeto.
@@ -393,8 +395,10 @@ export default function Home() {
 
               {/* Horário comercial */}
               <div className="mt-8">
-                <h4 className="font-bold mb-4 text-black">Horário comercial</h4>
-                <p className="text-gray-600">
+                <h4 className="font-bold mb-4 text-black text-center md:text-left">
+                  Horário comercial
+                </h4>
+                <p className="text-gray-600 text-center md:text-left">
                   Segunda a Sexta: 07:00 - 17:00
                   <br />
                   Sábado: Fechado
@@ -405,8 +409,8 @@ export default function Home() {
             </div>
 
             {/* Coluna do formulário */}
-            <div className="bg-white mb-11 p-8 rounded-lg shadow-lg">
-              <h3 className="text-2xl font-bold mb-6 text-black">
+            <div className="bg-white mb-8 md:mb-11 p-6 md:p-8 rounded-lg shadow-lg">
+              <h3 className="text-2xl font-bold mb-6 text-black text-center md:text-left">
                 Envie-nos uma mensagem
               </h3>
               <form className="space-y-6">
@@ -501,8 +505,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <Footer/>
-      
+      <Footer />
 
       {/* Scroll to Top Button */}
       <AnimatePresence>
