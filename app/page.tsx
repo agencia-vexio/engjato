@@ -41,11 +41,11 @@ export default function Home() {
     "/clientes/allteckLogo.png",
     "/clientes/enersugar.png",
     "/clientes/granelli.png",
-    "/clientes/oleoplan.png",
     "/clientes/olfar.png",
     "/clientes/selecta.png",
     "/clientes/tereos.png",
     "/clientes/uisa.png",
+    "/clientes/oleoplan.png",
   ];
 
   // Auto-advance hero slider
