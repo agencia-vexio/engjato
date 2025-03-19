@@ -32,32 +32,36 @@ export default function Footer() {
             <div className="flex justify-between gap-8">
               <div className="">
                 <h4 className="text-lg font-medium mb-4">Links Rápidos</h4>
-                <ul className="space-y-2 flex justify-center flex-row items-center gap-10 md:mr-28">
+                <ul className="space-y-2 flex mr-1 justify-center flex-row items-center gap-10 md:mr-28">
                   <li>
                     <Link
                       href="#"
-                      className="text-gray-400 ml-2 hover:text-yellow-400 transition-colors"
+                      className="text-gray-400 hover:text-yellow-400 transition-colors"
                     >
                       Inicio
                     </Link>
+                    <span className="ml-2">|</span>
                     <Link
                       href="#about"
                       className="text-gray-400 ml-2 hover:text-yellow-400 transition-colors"
                     >
                       Sobre
                     </Link>
+                    <span className="ml-2">|</span>
                     <Link
                       href="#services"
                       className="text-gray-400 ml-2 hover:text-yellow-400 transition-colors"
                     >
                       Serviços
                     </Link>
+                    <span className="ml-2">|</span>
                     <Link
                       href="#portfolio"
                       className="text-gray-400 ml-2 hover:text-yellow-400 transition-colors"
                     >
-                      Portfolio
+                      Portfolio 
                     </Link>
+                    <span className="ml-2">|</span>
                     <Link
                       href="#contact"
                       className="text-gray-400 ml-2 hover:text-yellow-400 transition-colors"
@@ -75,8 +79,8 @@ export default function Footer() {
               &copy; {new Date().getFullYear()} ENGJATO | Todos os direitos
               reservados.
             </p>
-            <div className="">
-                <span>Desenvolvido por</span>
+            <div className="flex gap-2 items-center">
+              <span>Desenvolvido com ❤️ por </span>
               <Link href="http://agenciagrowmedia.com.br/" target="_blank">
                 <Image
                   src="/logo-grow.png"
