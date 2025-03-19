@@ -52,7 +52,7 @@ const ServiceCard = ({ number, title, description, delay = 0 }: ServiceCardProps
       <h3 className="mt-8 mb-3 text-xl font-bold text-white">{title}</h3>
       <p className="text-gray-100">{description}</p>
       <motion.div
-        className="absolute -bottom-6 -right-6 w-24 h-24 rounded-full bg-gradient-to-br from-yellow-400/70 to-yellow-500/35"
+        className="absolute -bottom-6 -right-6 w-24 h-24 sm:w-14 sm:h-14 rounded-full bg-gradient-to-br from-yellow-400/70 to-yellow-500/35"
         animate={{
           scale: [1, 1.1, 1],
         }}

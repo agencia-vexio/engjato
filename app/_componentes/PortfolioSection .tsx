@@ -88,7 +88,7 @@ export default function PortfolioSection() {
           <div className="w-20 h-1 bg-black mx-auto mb-8"></div>
         </motion.h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 ml-24 mr-24">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:ml-24 md:mr-24">
           {portfolioItems.map((item, index) => (
             <motion.div
               key={item.id}
