@@ -131,7 +131,7 @@ export default function ServicesSection() {
         <div className="mx-auto max-w-7xl ml-24 mr-24 md:ml-24 md:mr-24 sm:ml-4 sm:mr-4 xs:ml-4 xs:mr-4">
           <motion.div className="text-center mb-16">
             <motion.h2
-              className="text-3xl md:text-4xl font-bold text-white mb-4"
+              className="text-3xl md:text-4xl mt-10 font-bold text-white mb-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.5 }}

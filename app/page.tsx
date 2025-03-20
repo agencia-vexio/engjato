@@ -204,7 +204,7 @@ export default function Home() {
       </section>
 
       {/* sessao quem somos */}
-      <section id="about" className="py-20 bg-gray-50" ref={whoWeAreRef}>
+      <section id="about" className="py-20  bg-gray-50" ref={whoWeAreRef}>
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -212,7 +212,7 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="max-w-4xl mx-auto text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <h2 className="text-3xl md:text-4xl mt-10 font-bold mb-6">
               Sobre a ENGJATO
             </h2>
             <div className="w-20 h-1 bg-yellow-500 mx-auto mb-8"></div>
@@ -327,7 +327,7 @@ export default function Home() {
             className="max-w-4xl mx-auto text-center mb-8 md:mb-16"
           >
             <div className="">
-              <h2 className="text-3xl md:text-4xl font-bold pt-6 mb-2 text-white">
+              <h2 className="text-3xl md:text-4xl font-bold pt-32 mb-2 text-white">
                 Contato
               </h2>
               <div className="w-20 h-1 bg-yellow-400 mx-auto mb-8"></div>
@@ -346,23 +346,27 @@ export default function Home() {
             className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mx-4 md:mx-24"
           >
             {/* Coluna de informações de contato */}
-            <div className="bg-white p-6 md:p-8 mb-8 md:mb-11 rounded-lg shadow-lg">
-              <h3 className="text-2xl font-bold mb-6 text-black text-center md:text-left">
+            <div className="bg-white p-4 sm:p-6 md:p-8 mb-6 sm:mb-8 md:mb-11 rounded-lg shadow-lg">
+              <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-black text-center md:text-left">
                 Contato
               </h3>
-              <p className="text-gray-600 mb-8 text-center md:text-left">
+              <p className="text-sm sm:text-base text-gray-600 mb-6 sm:mb-8 text-center md:text-left">
                 Nossa equipe está pronta para responder às suas perguntas e
                 fornecer informações de que necessita para tomar decisões
                 informadas sobre o seu projeto.
               </p>
 
-              <div className="space-y-6">
+              <div className="space-y-4 sm:space-y-6">
                 {/* Telefone */}
                 <div className="flex items-start">
                   <Phone className="w-5 h-5 text-yellow-400 mt-1 mr-4" />
                   <div>
-                    <h4 className="font-bold text-black">Telefone</h4>
-                    <p className="text-gray-600">(18) 3329-1918</p>
+                    <h4 className="font-bold text-black text-sm sm:text-base">
+                      Telefone
+                    </h4>
+                    <p className="text-gray-600 text-sm sm:text-base">
+                      (18) 3329-1918
+                    </p>
                   </div>
                 </div>
 
@@ -370,8 +374,10 @@ export default function Home() {
                 <div className="flex items-start">
                   <Mail className="w-5 h-5 text-yellow-400 mt-1 mr-4" />
                   <div>
-                    <h4 className="font-bold text-black">Email</h4>
-                    <p className="text-gray-600">
+                    <h4 className="font-bold text-black text-sm sm:text-base">
+                      Email
+                    </h4>
+                    <p className="text-gray-600 text-sm sm:text-base">
                       SOCIETARIO@SECULO20ASSIS.COM.BR
                     </p>
                   </div>
@@ -381,8 +387,10 @@ export default function Home() {
                 <div className="flex items-start">
                   <MapPin className="w-5 h-5 text-yellow-400 mt-1 mr-4" />
                   <div>
-                    <h4 className="font-bold text-black">Endereço</h4>
-                    <p className="text-gray-600">
+                    <h4 className="font-bold text-black text-sm sm:text-base">
+                      Endereço
+                    </h4>
+                    <p className="text-gray-600 text-sm sm:text-base">
                       Av. Tarumã, 236
                       <br />
                       Centro
@@ -394,11 +402,11 @@ export default function Home() {
               </div>
 
               {/* Horário comercial */}
-              <div className="mt-8">
-                <h4 className="font-bold mb-4 text-black text-center md:text-left">
+              <div className="mt-6 sm:mt-8">
+                <h4 className="font-bold mb-3 sm:mb-4 text-black text-center md:text-left text-sm sm:text-base">
                   Horário comercial
                 </h4>
-                <p className="text-gray-600 text-center md:text-left">
+                <p className="text-gray-600 text-center md:text-left text-sm sm:text-base">
                   Segunda a Sexta: 07:00 - 17:00
                   <br />
                   Sábado: Fechado

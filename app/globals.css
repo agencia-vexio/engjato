@@ -106,5 +106,6 @@
 html, body {
   overflow-x: hidden; /* Impede scroll horizontal */
   max-width: 100%; /* Garante que o conteúdo não ultrapasse a largura da viewport */
+  scroll-behavior: smooth;
 }
 
