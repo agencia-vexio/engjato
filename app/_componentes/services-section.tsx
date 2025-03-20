@@ -37,14 +37,19 @@ interface ServiceCardProps {
   delay?: number;
 }
 
-const ServiceCard = ({ number, title, description, delay = 0 }: ServiceCardProps) => {
+const ServiceCard = ({
+  number,
+  title,
+  description,
+  delay = 0,
+}: ServiceCardProps) => {
   return (
     <motion.div
       variants={itemVariants}
       initial="hidden"
       animate="visible"
       transition={{ delay }}
-      className="relative flex flex-col h-full p-6 overflow-hidden rounded-xl bg-black/80 border border-yellow-400"
+      className="relative flex flex-col h-full p-6 overflow-hidden rounded-xl bg-black/80 border border-yellow-400 w-full max-w-[300px] sm:max-w-none"
     >
       <div className="absolute top-4 left-4 flex items-center justify-center w-8 h-8 rounded-full bg-yellow-400 text-white font-bold">
         {number}
@@ -128,7 +133,7 @@ export default function ServicesSection() {
         animate={controls}
         className="relative z-10 container mx-auto px-4"
       >
-        <div className="mx-auto max-w-7xl ml-24 mr-24 md:ml-24 md:mr-24 sm:ml-4 sm:mr-4 xs:ml-4 xs:mr-4">
+        <div className="mx-auto max-w-7xl px-4 sm:ml-24 sm:mr-24">
           <motion.div className="text-center mb-16">
             <motion.h2
               className="text-3xl md:text-4xl mt-10 font-bold text-white mb-4"
@@ -139,25 +144,29 @@ export default function ServicesSection() {
               Serviços
             </motion.h2>
             <motion.div
-              className="h-1 w-24 bg-gradient-to-r from-yellow-500 to-yellow-400 mx-auto mb-6"
+              className="h-1 w-24 bg-gradient-to-r sm:ml-24 from-yellow-500 to-yellow-400 mx-auto mb-6"
               initial={{ width: 0 }}
               animate={{ width: 96 }}
               transition={{ delay: 0.5, duration: 0.8 }}
             />
-            <motion.p className="text-gray-300 max-w-2xl mx-auto">
+            <motion.p className="text-gray-300 mx-auto">
               Oferecemos serviços industriais de alta qualidade.
             </motion.p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="flex flex-wrap sm:ml-24 gap-6">
             {services.map((service, index) => (
-              <ServiceCard
+              <div
                 key={index}
-                number={service.number}
-                title={service.title}
-                description={service.description}
-                delay={index * 0.1}
-              />
+                className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(25%-18px)]"
+              >
+                <ServiceCard
+                  number={service.number}
+                  title={service.title}
+                  description={service.description}
+                  delay={index * 0.1}
+                />
+              </div>
             ))}
           </div>
 
