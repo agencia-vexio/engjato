@@ -87,7 +87,7 @@ export default function Footer() {
             reservados.
           </p>
           <div className="flex gap-2 items-center">
-            <span>Desenvolvido com ❤️ por </span>
+            <span className="text-gray-400 text-sm">Desenvolvido com ❤️ por </span>
             <Link href="http://agenciagrowmedia.com.br/" target="_blank">
               <Image
                 src="/logo-grow.png"
