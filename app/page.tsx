@@ -81,12 +81,14 @@ export default function Home() {
       <header className="fixed top-0 left-0 right-0 z-50 bg-[#d3d3d3] shadow-sm">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between md:ml-24 md:mr-24">
-            <Image
-              src="/logo.png"
-              alt="logo engjato amarelo e preto"
-              width={200}
-              height={180}
-            />
+            <Link href="#">
+              <Image
+                src="/logo.png"
+                alt="logo engjato amarelo e preto"
+                width={200}
+                height={180}
+              />
+            </Link>
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-8">
