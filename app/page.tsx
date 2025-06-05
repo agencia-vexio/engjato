@@ -167,10 +167,10 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="max-w-2xl text-white"
+            className="max-w-3xl text-white"
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-              Jateamento Industrial de Alta Performance!
+            <h1 className="text-4xl uppercase md:text-5xl lg:text-6xl font-bold mb-4">
+              Pintura e Jateamento Industrial
             </h1>
             <p className="text-lg md:text-xl mb-8">
               Soluções Inovadoras em Preparação e Acabamento de Superfícies, Com
@@ -367,7 +367,7 @@ export default function Home() {
                       Telefone
                     </h4>
                     <p className="text-gray-600 text-sm sm:text-base">
-                      (18) 3329-1918
+                      (18) 99608-9200 - (18) 99725-1153
                     </p>
                   </div>
                 </div>
@@ -380,7 +380,7 @@ export default function Home() {
                       Email
                     </h4>
                     <p className="text-gray-600 text-sm sm:text-base">
-                      SOCIETARIO@SECULO20ASSIS.COM.BR
+                      engjato@gmail.com
                     </p>
                   </div>
                 </div>
@@ -393,11 +393,11 @@ export default function Home() {
                       Endereço
                     </h4>
                     <p className="text-gray-600 text-sm sm:text-base">
-                      Av. Tarumã, 236
+                      Avenida das Primaveras
                       <br />
-                      Centro
+                      localizado no bairro Vila das Árvores
                       <br />
-                      Taruma-Sp
+                      municipio de Tarumã - SP
                     </p>
                   </div>
                 </div>
