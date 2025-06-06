@@ -10,8 +10,8 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
 import ServicesSection from "./_componentes/services-section";
-import ServicePortfolio from "./_componentes/PortfolioSection ";
 import Footer from "./_componentes/footer";
+import PortfolioSection from "./_componentes/PortfolioSection ";
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -315,7 +315,7 @@ export default function Home() {
 
       {/* Portfolio Section */}
       <section id="portfolio">
-        <ServicePortfolio />
+        <PortfolioSection />
       </section>
 
       {/* sessao contato */}
